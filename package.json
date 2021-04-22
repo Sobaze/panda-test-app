@@ -1,0 +1,23 @@
+{
+  "name": "pandaserver",
+  "version": "1.0.0",
+  "description": "Testing cloud service app engine deploy",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "node server.js",
+    "client": " npm start --prefix ./panda-client",
+    "dev": "concurrently \"npm run server\" \"npm run client\" ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonas Nilsson",
+  "license": "MIT",
+  "dependencies": {
+    "@google-cloud/storage": "^5.8.3",
+    "concurrently": "^6.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "multer": "^1.4.2",
+    "path": "^0.12.7"
+  }
+}

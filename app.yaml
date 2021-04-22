@@ -1,0 +1,26 @@
+runtime: nodejs12
+env: standard
+
+
+manual_scaling:
+  instances: 1
+
+resources:
+  cpu: .5
+  memory_gb: 0.5
+  disk_size_gb: 10
+
+handlers:
+  - url: /api/.*
+    script: auto
+  - url: /
+    static_files: panda-client/build/index.html
+    upload: panda-client/build/index.html
+  - url: /
+    static_dir: panda-client/build
+  - url: /static
+    static_dir: panda-client/build/static
+  - url: /.*
+    secure: always
+    redirect_http_response_code: 301
+    script: auto
